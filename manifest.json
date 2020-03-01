@@ -1,0 +1,34 @@
+{
+  "name": "Splunk Fullscreen",
+  "version": "1.0",
+  "description": "True fullscreen dashboards! Reclaim space on your dashboards otherwise taken by the Splunk header.",
+  "permissions": ["activeTab","tabs", "storage", "http://*/*", "https://*/*"],
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["getContent.js"]
+    }
+  ],
+  "options_page": "options.html",
+  "background": {
+    "matches": ["http://*/*", "https://*/*"],
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "browser_action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "images/splunk_fullscreen16.png",
+      "32": "images/splunk_fullscreen32.png",
+      "48": "images/splunk_fullscreen48.png",
+      "128": "images/splunk_fullscreen128.png"
+    }
+  },
+  "icons": {
+    "16": "images/splunk_fullscreen16.png",
+    "32": "images/splunk_fullscreen32.png",
+    "48": "images/splunk_fullscreen48.png",
+    "128": "images/splunk_fullscreen128.png"
+  },
+  "manifest_version": 2
+}
